@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/js/app.js"],"names":["a","console","log","KEY"],"mappings":";;AACA,IAAIA,CAAC,GAAG,EAAR;AACAC,OAAO,CAACC,GAAR,CAAYF,CAAZ,E,CAGA;;AACA,IAAMG,GAAG,GAAG,KAAZ;AACAF,OAAO,CAACC,GAAR,CAAY,gBAAZ,EAA8BC,GAA9B","sourcesContent":["\nlet a = 10;\nconsole.log(a);\n\n\n// const\nconst KEY = 12345;\nconsole.log(\"Constant KEY: \", KEY);"],"file":"app.js"}
