@@ -1,30 +1,62 @@
 "use strict";
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
 // ECMAScript6
-var addValues = function addValues(a, b) {
-  var c = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 2;
-  return a + b + c;
-};
+// Classes
+var Shape =
+/*#__PURE__*/
+function () {
+  function Shape(width, height) {
+    _classCallCheck(this, Shape);
 
-console.log("Result: ", addValues(2, 6)); // Rest paramters
-
-var addArray = function addArray(a, b) {
-  var result = a + b;
-
-  for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    args[_key - 2] = arguments[_key];
+    this._width = width;
+    this._height = height;
   }
 
-  args.forEach(function (i) {
-    result += i;
-  });
-  return result;
-};
+  _createClass(Shape, [{
+    key: "getArea",
+    value: function getArea() {
+      return this._width * this._height;
+    }
+  }, {
+    key: "getPerimeter",
+    value: function getPerimeter() {
+      return this._width + this._height;
+    }
+  }, {
+    key: "width",
+    set: function set(width) {
+      if (width >= 10) {
+        this._width = width;
+      } else {
+        console.log("Width should be greater than equal to 10");
+      }
+    },
+    get: function get() {
+      return this._width;
+    }
+  }], [{
+    key: "getShapeObj",
+    value: function getShapeObj() {
+      if (arguments.length == 1) {
+        return 'square';
+      } else if (arguments.length == 2) {
+        return 'rectangle';
+      }
+    }
+  }]);
 
-var arrA = [1, 3, 5];
-console.log("Result: ", addArray.apply(void 0, [2, 6].concat(arrA))); // Spread parameters
+  return Shape;
+}();
 
-var arrB = [2, 4, 6];
-var concatArr = [10, 20].concat(arrB, [30]);
-console.log(concatArr);
+var shape = new Shape(1, 2);
+shape.width = 5;
+console.log(shape.getArea());
+console.log(shape.getPerimeter());
+console.log(Shape.getShapeObj(1, 2));
 //# sourceMappingURL=app.js.map
