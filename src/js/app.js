@@ -1,39 +1,6 @@
 // ECMAScript6
 
-// Classes
-
-class Shape {
-
-  constructor(width, height) {
-    this._width = width;
-    this._height = height;
-  }
-
-  set width (width) {
-    if (width >= 10) {
-      this._width = width;
-    } else {
-      console.log("Width should be greater than equal to 10");
-    }
-  }
-  get width () { return this._width }
-
-  getArea() {
-    return this._width * this._height;
-  }
-
-  getPerimeter() {
-    return this._width + this._height;
-  }
-
-  static getShapeObj(...args) {
-    if (args.length == 1) {
-      return 'square';
-    } else if (args.length == 2) {
-      return 'rectangle';
-    }
-  }
-}
+import { Shape } from "./classes";
 
 
 let shape = new Shape(1, 2);
